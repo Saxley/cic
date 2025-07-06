@@ -25,16 +25,16 @@ def decision(entrada):
 
 #Creamos una funcion que detecta si los datos ingresados son o no numeros
 def verificacion(entrada):
-    try:
+    try: # intentamos convertir la entrada en un flotante en caso de exito devolvemos true
         float(entrada)
         return True
-    except ValueError:
+    except ValueError: # en caso de error devolvemos false
         return False
     
 def captura(entrada): # Creamos una funcion que devuelve la entrada como flotante en caso de ser numero
-    if verificacion(entrada) == True: 
+    if verificacion(entrada) == True: # si verificacion devuelve true transformamos el dato a numero flotante y lo retornamos
         return float(entrada)
-    else:
+    else: # caso contrario devolvemos false
         return False
 
 # Creamos una lista de tuplas con los datos de IMC para adultos otorgados por la OMS
