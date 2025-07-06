@@ -37,6 +37,18 @@ def captura(entrada): # Creamos una funcion que devuelve la entrada como flotant
     else: # caso contrario devolvemos false
         return False
 
+def verificacionEntrada(entrada): # verificacionEntrada nos ayuda a verificar que el usuario ingreso texto en formato stribg y no dejo el campo vacio
+  solo_letras = ''.join(d for d in entrada if not d.isdigit()) # Con ayuda de una expresion generadora devomvemos de entrada todo aquel caracter que no sea digito, con join() unimos el elemento generado a la cadena de texto
+  
+  if len(solo_letras) > 0: # En caso de que solo_letras sea mayor a 0 retornaremos la misma
+    return solo_letras
+  elif solo_letras=='': # En caso de que sea '' Solicitaremos que se ingrese el dato solicitado
+    entrada=input("Porfavor ingresa el dato solicitado: ").strip() # Pedimos el dato y lo almacenamos en entrada
+    solo_letras = verificacionEntrada(entrada) # Hacemos una llamada recursiva a verificacionEntrada y almacenamos la respuesta rn solo_letras
+    if solo_letras is not None: # En caso de que solo_letras no sea None retornamos el mismo
+      return solo_letras
+      
+
 # Creamos una lista de tuplas con los datos de IMC para adultos otorgados por la OMS
 CATEGORIAS_ADULTOS = [
     (18.5, "Bajo peso"),
@@ -65,9 +77,9 @@ impresiones =[
 
 print(impresiones[0]) # Imprimimos en pantalla la bienvenida
 while True: # Creamos un bucle infinito para que el usuario pueda elegir cuando salir del mismo
-    nombre = input(impresiones[9]).strip()
-    apellido_paterno = input(impresiones[10]).strip()
-    apellido_materno = input(impresiones[11]).strip()
+    nombre = verificacionEntrada(input(impresiones[9]).strip())
+    apellido_paterno = verificacionEntrada(input(impresiones[10]).strip())
+    apellido_materno = verificacionEntrada(input(impresiones[11]).strip())
     
     # Creamos las variables edad, peso y altura para almacenar los datos
     edad = 0

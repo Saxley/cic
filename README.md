@@ -5,10 +5,11 @@
 > Aprendi a usar un poco más python y entendi mejor su sintaxis, tuve que investigar y comprender cosas nuevas como el ciclo while que no funciona como en javascript o php, sin embargo no es tan compliado, pude aplicar POO y funciones sin problema alguno, ademas de que me parecio un proyecto escalable y muy bueno para empezar a practicar este lenguaje. Hasta el momento el curso me ha enseñado que python es un lenguaje de programacion muy versatil y con una curva de aprendizaje tolerable.
 > Forma en la que cree el programa:
 > Dividi el problema en funciones.
-> 4 funciones para ser exacto,
+> 5 funciones para ser exacto,
 > calculadora():Se encarga de hacer el calculo del IMC
 > decision()::Se encarga de hacer decidir al usuario si seguir con la ejecucion del programa o terminarla.
 > verificacion()::Se encarga de verificar que los campos numericos sean numericos.
+> verificacionEntrada()::Nos ayuda a verificar que el usuatio ingresa uma cadena de texto, en caso de ingresar digitos se eliminan de la cadena y en caso de solo ingresar numeros solicitamos que ingrese el campo solicitado
 > captura()::Devuelve el dato transformado o retorna false
 > Tambien utilizamos listas con tuplas para los datos constantes
 
